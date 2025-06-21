@@ -17,10 +17,10 @@
   color: #fff; /* White text */
 }
 
-.back-button {
+.work-back-button {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  color: white !important;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   cursor: pointer;
@@ -31,9 +31,10 @@
   will-change: transform, background-color;
 }
 
-.back-button:hover {
+.work-back-button:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .work-content {

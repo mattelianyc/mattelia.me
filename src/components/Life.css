@@ -8,7 +8,11 @@
 .life-page {
   min-height: 100vh;
   width: 100vw;
-  background: #fff;
+  background-image: url('/images/profile/skyline_still.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 2rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
@@ -17,12 +21,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
-.back-button {
-  background: rgba(0, 0, 0, 0.1);
+.life-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  z-index: 0;
+}
+
+.life-back-button {
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.2);
-  color: #000;
+  color: #000 !important;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   cursor: pointer;
@@ -32,24 +49,30 @@
   transition: all 0.3s ease;
   margin-bottom: 2rem;
   align-self: flex-start;
+  position: relative;
+  z-index: 2;
 }
 
-.back-button:hover {
-  background: rgba(0, 0, 0, 0.15);
+.life-back-button:hover {
+  background: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .life-content {
   max-width: 900px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.02);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 24px;
   padding: 4rem;
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
 }
 
 .profile-section {
@@ -65,10 +88,11 @@
 }
 
 .profile-image img {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 20%;
   border: 6px solid #000;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
@@ -215,6 +239,7 @@
   .profile-image img {
     width: 160px;
     height: 160px;
+    object-position: center 20%;
   }
 }
 
@@ -242,6 +267,7 @@
   .profile-image img {
     width: 140px;
     height: 140px;
+    object-position: center 20%;
   }
   
   .name {
@@ -297,6 +323,7 @@
     width: 120px;
     height: 120px;
     border-width: 4px;
+    object-position: center 20%;
   }
   
   .name {

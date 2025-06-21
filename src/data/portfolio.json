@@ -5,7 +5,7 @@
     "location": "NYC",
     "emoji": "👨🏻‍💻",
     "bio": "NYC-based engineer with a decade of experience designing & developing apps across web & mobile. My code consists mostly of JavaScript from front to back. I specialize in cross-platform mobile development using React Native.",
-    "image": "/images/profile.jpg",
+    "image": "/images/profile/profile.png",
     "links": [
       {
         "name": "GitHub",
