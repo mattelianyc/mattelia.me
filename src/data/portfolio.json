@@ -1,0 +1,86 @@
+{
+  "personal": {
+    "name": "matthew a. elia",
+    "title": "Software Architect & Engineer",
+    "location": "NYC",
+    "emoji": "👨🏻‍💻",
+    "bio": "NYC-based engineer with a decade of experience designing & developing apps across web & mobile. My code consists mostly of JavaScript from front to back. I specialize in cross-platform mobile development using React Native.",
+    "image": "/images/profile.jpg",
+    "links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com",
+        "icon": "linkedin"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:hello@matthewelia.com",
+        "icon": "email"
+      }
+    ]
+  },
+  "work": {
+    "tagline": "Portfolio of innovative solutions across industries",
+    "clients": [
+      {
+        "id": "kpmg",
+        "name": "KPMG",
+        "logo": "/images/clients/kpmg.png",
+        "description": "Spent 2 years as a Technology Consultant in the Digital Lighthouse division. Architected and led engineering teams for large financial clients including HSBC, Regions Bank, and Lending Club. Operated in a sales engineering capacity to attract new clients.",
+        "technologies": ["Architecture", "Team Leadership", "Financial Services", "Sales Engineering"],
+        "year": "2021-2023",
+        "website": "www.kpmg.com"
+      },
+      {
+        "id": "usamriid",
+        "name": "USAMRIID",
+        "logo": "/images/clients/usamriid.png",
+        "description": "Led team in building a React Native application for the United States Army Medical Research Institute of Infectious Diseases. Core feature: diagnostic tool for assessing victims of biological warfare agents. Ported algorithmic logic from legacy PHP to JavaScript using React Native/Redux with Rails API backend.",
+        "technologies": ["React Native", "Redux", "JavaScript", "Rails API"],
+        "year": "2020",
+        "website": "www.usamriid.health.mil"
+      },
+      {
+        "id": "element-capital",
+        "name": "Element Capital",
+        "logo": "/images/clients/element.png",
+        "description": "Developed trade execution platform using vanilla JavaScript and D3.js. Built comprehensive browser automated testing suite using Jest/Puppeteer covering the entire quote building and trade execution process between traders and banks.",
+        "technologies": ["Vanilla JavaScript", "D3.js", "Jest", "Puppeteer"],
+        "year": "2019",
+        "website": "https://www.elementcapital.com/"
+      },
+      {
+        "id": "jpmorgan",
+        "name": "J.P. Morgan Chase",
+        "logo": "/images/clients/jp.png",
+        "description": "Worked as Creative Technologist in NYC office building prototypes that bridged Creative and Engineering teams. Built React Native application for CBM (Chase Business Mobile) and multiple web applications for Commercial Banking Team using Ruby on Rails and D3.js.",
+        "technologies": ["React Native", "Ruby on Rails", "D3.js", "Prototyping"],
+        "year": "2018",
+        "website": "www.jpmorgan.com"
+      },
+      {
+        "id": "lighterjack",
+        "name": "LighterJack",
+        "logo": "/images/clients/lj.png",
+        "description": "Built Bluetooth proximity app using React Native with Nordic Semiconductor BLE chip. Implemented Kalman Filter algorithm for RSSI noise cleaning, QR Scanner, Background Processing, and Local/Push Notifications. Alerts when peripheral device goes out of range.",
+        "technologies": ["React Native", "Bluetooth LE", "Kalman Filter", "Nordic Semiconductor"],
+        "year": "2017",
+        "website": "Mobile App"
+      },
+      {
+        "id": "homer",
+        "name": "Homer",
+        "logo": "/images/clients/homer.png",
+        "description": "Real Estate web application with MySQL/Laravel backend and vanilla JavaScript frontend. Integrated Google Maps APIs to sort rental listings by approximate annual transit time. 26-page Provisional Patent filed: 'SYSTEMS AND METHODS FOR SELECTING OPTIMAL PROPERTY LOCATIONS BASED ON LOGISTICAL CONCERNS' (Patent #03923358).",
+        "technologies": ["Laravel", "MySQL", "JavaScript", "Google Maps API"],
+        "year": "2016",
+        "website": "Real Estate Platform"
+      }
+    ]
+  }
+} 

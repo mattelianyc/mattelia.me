@@ -1,0 +1,417 @@
+@font-face {
+  font-family: 'Permanent Marker';
+  src: url('../assets/permanent-marker.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.landing {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transform: translateZ(0); /* GPU acceleration */
+  position: relative;
+  background: #000; /* Fallback black background */
+}
+
+.split-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  will-change: transform, clip-path; /* GPU optimization */
+}
+
+.life-section {
+  background: #000; /* Solid black background */
+  z-index: 1;
+}
+
+.life-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 1; /* Full opacity for waves video */
+}
+
+.work-section {
+  background: #000; /* Fallback background */
+  z-index: 1;
+}
+
+.work-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.8; /* Slight overlay effect */
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  will-change: transform;
+  opacity: 0.7; /* Make video more subtle */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  will-change: background-color;
+}
+
+.life-overlay {
+  background: rgba(0, 0, 0, 0.9); /* Black overlay */
+}
+
+.life-overlay.hovered {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.work-overlay {
+  background: rgba(0, 0, 0, 0.2); /* Neutral dark overlay */
+}
+
+.work-overlay.hovered {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  will-change: transform;
+}
+
+.minute-hand-divider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%; /* Half the viewport width as base */
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 0.8) 80%, 
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform-origin: left center;
+  transform: translate(0, -50%);
+  z-index: 10;
+  border-radius: 0 1px 1px 0;
+  box-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.6),
+    0 0 16px rgba(255, 255, 255, 0.3);
+  will-change: transform;
+}
+
+.center-clock-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  box-shadow: 
+    0 0 12px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.center-clock-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Dynamic Center Label - Yin Yang Style */
+.center-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+  pointer-events: none;
+  user-select: none;
+}
+
+.center-label > span {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.label-text {
+  display: block;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3rem;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin: 0;
+  line-height: 1;
+}
+
+.life-label {
+  color: white;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(255, 255, 255, 0.4),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.work-label {
+  color: #000;
+  background: rgba(255, 255, 255, 0.95);
+  text-shadow: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.center-label > span.work-label {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.initials-label {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.3),
+    1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+
+.life-section .content {
+  /* Dynamic positioning handled by inline styles */
+}
+
+.work-section .content {
+  /* Dynamic positioning handled by inline styles */
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  will-change: transform, text-shadow;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0;
+  opacity: 0.9;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  will-change: transform;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .life-section {
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  
+  .work-section {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  
+  .section-title {
+    font-size: 3.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .minute-hand-divider {
+    width: 40%;
+    height: 2px;
+  }
+  
+  .center-clock-dot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (max-width: 768px) {
+  .life-section {
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  
+  .work-section {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+  
+  .minute-hand-divider {
+    width: 35%;
+    height: 1.5px;
+  }
+  
+  .center-clock-dot {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .label-text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .content {
+    padding: 1rem;
+  }
+  
+  .minute-hand-divider {
+    width: 30%;
+    height: 1px;
+  }
+  
+  .center-clock-dot {
+    width: 5px;
+    height: 5px;
+  }
+  
+  .center-clock-dot::before {
+    width: 2px;
+    height: 2px;
+  }
+  
+  .label-text {
+    font-size: 2.25rem;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .split-section:active {
+    transform: scale(1.01);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Artist initials in bottom right */
+.artist-signature {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  z-index: 15;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  user-select: none;
+}
+
+.artist-signature::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.4) 0%, 
+    rgba(255, 255, 255, 0.1) 100%
+  );
+}
+
+.black-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  cursor: pointer;
+  z-index: 2;
+  will-change: transform, clip-path;
+}
+
+.black-mask .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  will-change: transform;
+} 

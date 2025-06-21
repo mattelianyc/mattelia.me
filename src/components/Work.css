@@ -1,0 +1,420 @@
+@font-face {
+  font-family: 'Permanent Marker';
+  src: url('../assets/permanent-marker.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.work-page {
+  min-height: 100vh;
+  width: 100vw;
+  background: #000; /* Pure black background */
+  padding: 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  transform: translateZ(0); /* GPU acceleration */
+  color: #fff; /* White text */
+}
+
+.back-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  will-change: transform, background-color;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.work-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: white;
+}
+
+.work-header h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2),
+    2px 2px 4px rgba(0, 0, 0, 0.8);
+  will-change: transform;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  font-weight: 300;
+  opacity: 0.9;
+  margin: 0;
+  will-change: transform;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.client-card {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  will-change: transform, box-shadow;
+  color: #000;
+  height: 280px;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.client-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.client-logo {
+  display: none; /* Hide the old logo container */
+}
+
+.client-info {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  border-radius: 0 0 20px 20px;
+}
+
+.client-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  will-change: transform;
+}
+
+.year {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  will-change: transform;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  will-change: transform;
+  color: white;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  will-change: transform, color;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #CC2936; /* Nantucket red */
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 2rem 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 0.75rem;
+  flex-shrink: 0;
+  will-change: transform;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: none; /* Remove the invert filter to show original logo colors */
+}
+
+.modal-title h2 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  will-change: transform;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+.modal-year {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  will-change: transform;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2rem 0;
+  will-change: transform;
+}
+
+.technologies h4 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #fff;
+  margin: 0 0 1rem 0;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: #fff;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  will-change: transform;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .work-header h1 {
+    font-size: 3.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .clients-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .client-card {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-page {
+    padding: 1rem;
+  }
+  
+  .work-header h1 {
+    font-size: 2.8rem;
+  }
+  
+  .tagline {
+    font-size: 1.1rem;
+  }
+  
+  .clients-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .client-card {
+    height: 220px;
+  }
+  
+  .client-info {
+    padding: 1.25rem;
+  }
+  
+  .modal-overlay {
+    padding: 1rem;
+  }
+  
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .modal-title h2 {
+    font-size: 1.6rem;
+  }
+  
+  .project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .clients-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .client-card {
+    height: 200px;
+  }
+  
+  .client-info {
+    padding: 1rem;
+  }
+  
+  .client-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .modal-header {
+    padding: 1rem;
+  }
+  
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .tech-tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .client-card:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .client-card:active {
+    transform: scale(0.98);
+  }
+  
+  .back-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: none;
+  }
+  
+  .back-button:active {
+    transform: scale(0.98);
+    background: rgba(255, 255, 255, 0.2);
+  }
+} 
