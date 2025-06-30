@@ -1,6 +1,7 @@
 {
   "personal": {
     "name": "matthew a. elia",
+    "nickname": "m.e.",
     "title": "Software Architect & Engineer",
     "location": "NYC",
     "emoji": "👨🏻‍💻",
@@ -9,17 +10,12 @@
     "links": [
       {
         "name": "GitHub",
-        "url": "https://github.com",
+        "url": "https://github.com/mattelianyc",
         "icon": "github"
       },
       {
-        "name": "LinkedIn",
-        "url": "https://linkedin.com",
-        "icon": "linkedin"
-      },
-      {
         "name": "Email",
-        "url": "mailto:hello@matthewelia.com",
+        "url": "mailto:mattelianyc@gmail.com",
         "icon": "email"
       }
     ]
@@ -27,6 +23,15 @@
   "work": {
     "tagline": "Portfolio of innovative solutions across industries",
     "clients": [
+      {
+        "id": "talent-platform",
+        "name": "Talent Platform",
+        "logo": "/images/clients/tlnt.png",
+        "description": "Architected and developed a comprehensive platform for talent management and trading. The ecosystem includes multiple components such as a web application, mobile apps for different user roles, a decentralized exchange (DEX) for talent-related tokens, microservices for scalability, and a robust API for integration. Key features include cryptocurrency market integration, user profiles, shops, and real-time communication.",
+        "technologies": ["React Native", "JavaScript", "Node.js", "Microservices", "Blockchain", "Decentralized Exchange"],
+        "year": "2023-Present",
+        "website": "Talent Platform Ecosystem"
+      },
       {
         "id": "kpmg",
         "name": "KPMG",
@@ -71,6 +76,24 @@
         "technologies": ["React Native", "Bluetooth LE", "Kalman Filter", "Nordic Semiconductor"],
         "year": "2017",
         "website": "Mobile App"
+      },
+      {
+        "id": "mlb",
+        "name": "Major League Baseball",
+        "logo": "/images/clients/mlb.png",
+        "description": "Built animation-heavy web application for annual All Star Game event.",
+        "technologies": ["JavaScript", "Web Animations", "Event Marketing"],
+        "year": "2017",
+        "website": "All Star Game Event"
+      },
+      {
+        "id": "raymond-james",
+        "name": "Raymond James",
+        "logo": "/images/clients/rayj.png",
+        "description": "Built animation-heavy web application for client: financial services firm, RAYMOND JAMES FINANCIAL INC (RJF - NYSE). Utilized D3js - Data Visualization JS library.",
+        "technologies": ["D3.js", "JavaScript", "Data Visualization", "Financial Services"],
+        "year": "2017",
+        "website": "www.raymondjames.com"
       },
       {
         "id": "homer",

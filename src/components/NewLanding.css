@@ -1,0 +1,454 @@
+@font-face {
+  font-family: 'vt323';
+  src: url('../../vt323.ttf') format('truetype'),
+       url('../assets/vt323.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../assets/Inconsolata-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../assets/Inconsolata-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('../assets/Inconsolata-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kumar One Outline';
+  src: url('../assets/KumarOneOutline-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cedarville Cursive';
+  src: url('../assets/CedarvilleCursive-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.new-landing {
+  min-height: 100vh;
+  width: 100vw;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Header Section */
+.landing-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  z-index: 10;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: 'vt323', cursive, sans-serif;
+  font-size: 4.2rem;
+  font-weight: normal;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  color: #fff;
+}
+
+.title {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+  opacity: 0.9;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff9999;
+}
+
+.location {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.7;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* Split Container */
+.split-container {
+  display: flex;
+  flex: 1;
+  height: 45vh;
+  min-height: 375px;
+  position: relative;
+}
+
+.split-section {
+  width: 50%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.split-section.hovered {
+  z-index: 2;
+}
+
+.split-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* Improve mobile video performance */
+  will-change: auto;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.split-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.split-section.hovered .split-overlay {
+  background: rgba(255, 153, 153, 0.3);
+  
+}
+
+.split-content {
+  text-align: center;
+  z-index: 3;
+  position: relative;
+  padding: 1rem;
+}
+
+.split-title {
+  font-family: 'Kumar One Outline', cursive, sans-serif;
+  font-size: 6rem;
+  font-weight: normal;
+  margin: 0 0 0.5rem;
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.split-subtitle {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.9;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  color: #ff9999;
+}
+
+/* Life Section Specific */
+.life-split .split-title {
+  font-family: 'Cedarville Cursive', cursive, sans-serif;
+  color: #fff;
+}
+
+.life-split.hovered .split-title {
+  color: #000;
+  text-shadow: 0 0 20px rgba(255, 153, 153, 0.8);
+}
+
+/* Work Section Specific */
+.work-split .split-title {
+  font-family: 'Cedarville Cursive', cursive, sans-serif;
+  color: #fff;
+}
+
+.work-split.hovered .split-title {
+  color: #000;
+  text-shadow: 0 0 20px rgba(255, 153, 153, 0.8);
+}
+
+/* Footer Section */
+.landing-footer {
+  padding: 2rem;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  display: inline-block;
+}
+
+.footer-link:hover {
+  border-color: #ff9999;
+  background: rgba(255, 153, 153, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 153, 153, 0.2);
+  color: #ff9999;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .name {
+    font-size: 3rem;
+  }
+  
+  .split-title {
+    font-size: 3.5rem;
+  }
+  
+  .split-container {
+    height: 37.5vh;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-header {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+  }
+  
+  .location {
+    font-size: 0.9rem;
+  }
+  
+  /* Stack videos vertically on mobile */
+  .split-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 45vh;
+  }
+  
+  .split-section {
+    width: 100%;
+    height: 37.5vh;
+    min-height: 225px;
+  }
+  
+  .split-title {
+    font-size: 3rem;
+  }
+  
+  .split-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .links-container {
+    gap: 1rem;
+  }
+  
+  .footer-link {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+  
+  /* Improve mobile video performance */
+  .split-video {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .name {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .title {
+    font-size: 0.9rem;
+  }
+  
+  .location {
+    font-size: 0.8rem;
+  }
+  
+  /* Ensure proper stacking on small mobile */
+  .split-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 37.5vh;
+  }
+  
+  .split-section {
+    width: 100%;
+    height: 30vh;
+    min-height: 187px;
+  }
+  
+  .split-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .split-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .split-content {
+    padding: 0.5rem;
+  }
+  
+  .links-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .footer-link {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .landing-footer {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .name {
+    font-size: 1.8rem;
+  }
+  
+  .split-section {
+    height: 26vh;
+    min-height: 150px;
+  }
+  
+  .split-title {
+    font-size: 2rem;
+  }
+  
+  .split-subtitle {
+    font-size: 0.7rem;
+  }
+}
+
+/* Hover effects and animations - only on devices that support hover */
+@media (hover: hover) and (pointer: fine) {
+  .split-section:hover {
+    transform: scale(1.02);
+  }
+  
+  .footer-link:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .split-section:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  .footer-link:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Remove hover styles on touch devices */
+  .split-section:hover {
+    transform: none;
+  }
+  
+  .footer-link:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: none;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  .split-video {
+    /* Reduce video quality on mobile if needed */
+    opacity: 0.9;
+  }
+  
+  /* Disable some animations on mobile for better performance */
+  .split-section {
+    transition: none;
+  }
+  
+  .split-overlay {
+    transition: none;
+  }
+} 
