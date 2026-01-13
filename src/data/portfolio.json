@@ -24,6 +24,25 @@
     "tagline": "Portfolio of innovative solutions across industries",
     "clients": [
       {
+        "id": "amazon-music",
+        "name": "Amazon Music Delivered 2025",
+        "logo": "/images/clients/amazon_music_logo.png",
+        "description": "Worked on Amazon Music Delivered 2025, Amazon Music’s annual Year in Review experience shipped to millions of users. Contributed to a brownfield hybrid mobile codebase combining React Native with native iOS (Swift) and Android (Kotlin) components. Built and refined high-performance animated storytelling flows using Lottie, optimized for smooth playback across a wide device matrix. Focused on performance tuning, animation timing, and reliability for a globally launched, peak-traffic consumer experience.",
+        "technologies": [
+          "React Native",
+          "Swift",
+          "Kotlin",
+          "Lottie"
+        ],
+        "year": "Aug 2025 – Dec 2025",
+        "links": [
+          {
+            "label": "Fast Company (press)",
+            "url": "https://www.fastcompany.com/91451302/amazon-music-delivered-2025-how-to-see-your-year-in-review-playlist-spotify-wrapped"
+          }
+        ]
+      },
+      {
         "id": "talent-platform",
         "name": "Talent Platform",
         "logo": "/images/clients/tlnt.png",
@@ -85,15 +104,6 @@
         "technologies": ["JavaScript", "Web Animations", "Event Marketing"],
         "year": "2017",
         "website": "All Star Game Event"
-      },
-      {
-        "id": "raymond-james",
-        "name": "Raymond James",
-        "logo": "/images/clients/rayj.png",
-        "description": "Built animation-heavy web application for client: financial services firm, RAYMOND JAMES FINANCIAL INC (RJF - NYSE). Utilized D3js - Data Visualization JS library.",
-        "technologies": ["D3.js", "JavaScript", "Data Visualization", "Financial Services"],
-        "year": "2017",
-        "website": "www.raymondjames.com"
       },
       {
         "id": "homer",

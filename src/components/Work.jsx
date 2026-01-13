@@ -334,6 +334,30 @@ const Work = () => {
                     ))}
                   </motion.div>
                 </motion.div>
+
+                {Array.isArray(selectedClient.links) && selectedClient.links.length > 0 && (
+                  <motion.div
+                    className="client-links"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.5 }}
+                  >
+                    <h4>Press</h4>
+                    <div className="client-links-list">
+                      {selectedClient.links.map((link, index) => (
+                        <a
+                          key={`${link.url}-${index}`}
+                          href={link.url}
+                          className="client-link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label || link.url}
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
               </motion.div>
             </motion.div>
           </motion.div>

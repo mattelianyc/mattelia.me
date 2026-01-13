@@ -65,6 +65,9 @@
   z-index: 10;
   position: relative;
   flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .name {
@@ -101,10 +104,12 @@
 /* Split Container */
 .split-container {
   display: flex;
-  flex: 1;
-  height: 45vh;
-  min-height: 375px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
 }
 
 .split-section {
@@ -213,8 +218,13 @@
   padding: 2rem;
   text-align: center;
   z-index: 10;
-  position: relative;
-  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .links-container {
@@ -259,8 +269,8 @@
   }
   
   .split-container {
-    height: 37.5vh;
-    min-height: 300px;
+    width: 100vw;
+    height: 100vh;
   }
 }
 
@@ -284,8 +294,8 @@
   /* Stack videos vertically on mobile */
   .split-container {
     flex-direction: column;
-    height: auto;
-    min-height: 45vh;
+    width: 100vw;
+    height: 100vh;
   }
   
   .split-section {
@@ -339,8 +349,8 @@
   /* Ensure proper stacking on small mobile */
   .split-container {
     flex-direction: column;
-    height: auto;
-    min-height: 37.5vh;
+    width: 100vw;
+    height: 100vh;
   }
   
   .split-section {
