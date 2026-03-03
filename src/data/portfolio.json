@@ -14,6 +14,11 @@
         "icon": "github"
       },
       {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/matthew-elia-0120941a6",
+        "icon": "linkedin"
+      },
+      {
         "name": "Email",
         "url": "mailto:mattelianyc@gmail.com",
         "icon": "email"

@@ -32,12 +32,12 @@
 .life-page {
   min-height: 100vh;
   width: 100vw;
-  background: #000; /* Pure black background like work page */
+  background: #fff;
   padding: 2rem;
   font-family: 'Inconsolata', monospace;
   margin: 0;
   box-sizing: border-box;
-  color: #fff; /* White text like work page */
+  color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,16 +46,15 @@
 }
 
 .life-back-button {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white !important;
+  background: transparent;
+  border: none;
+  color: #000 !important;
   font-family: 'Inconsolata', monospace;
   padding: 0.75rem 1.5rem;
-  border-radius: 50px;
+  border-radius: 0;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  backdrop-filter: blur(10px);
   margin-bottom: 2rem;
   align-self: flex-start;
   position: relative;
@@ -64,24 +63,22 @@
 }
 
 .life-back-button:hover {
-  background: rgba(255, 153, 153, 0.2);
+  background: rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
-  border: 1px solid #ff9999;
-  color: #ff9999 !important;
+  color: #000 !important;
 }
 
 .life-content {
   max-width: 900px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fff;
+  border: none;
   border-radius: 24px;
   padding: 4rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: #000;
 }
 
 .profile-section {
@@ -102,14 +99,13 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
-  border: 6px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
 }
 
 .profile-image img:hover {
   transform: scale(1.05);
-  border-color: #ff9999;
 }
 
 .profile-info {
@@ -121,8 +117,7 @@
   font-family: 'vt323', cursive;
   font-size: 3.5rem;
   font-weight: normal;
-  color: #fff; /* Plain white */
-  margin: 0 0 1rem 0;
+  color: #000;
   letter-spacing: 0.02em;
   text-transform: lowercase;
   line-height: 1.1;
@@ -140,7 +135,7 @@
 .location {
   font-family: 'Inconsolata', monospace;
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.8);  
+  color: rgba(0, 0, 0, 0.7);
   margin: 0;
   display: flex;
   align-items: center;
@@ -155,7 +150,7 @@
   font-family: 'Inconsolata', monospace;
   font-size: 1.2rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.85);
   margin: 0;
   text-align: left;
   max-width: none;
@@ -169,13 +164,11 @@
   font-family: 'vt323', cursive;
   font-size: 2rem;
   font-weight: normal;
-  color: #fff;
+  color: #000;
   margin: 0 0 2rem 0;
   text-transform: lowercase;
   letter-spacing: 0.02em;
-  text-shadow: 
-    0 0 20px rgba(255, 255, 255, 0.4),
-    2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: none;
 }
 
 .social-links {
@@ -189,25 +182,24 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(0, 0, 0, 0.04);
+  color: #000;
   text-decoration: none;
-  border-radius: 50px;
+  border-radius: 0;
   font-family: 'Inconsolata', monospace;
   font-weight: 500;
   font-size: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: none;
   will-change: transform, background-color;
 }
 
 .social-link:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(255, 153, 153, 0.3);
-  background: rgba(255, 153, 153, 0.2);
-  border-color: #ff9999;
-  color: #ff9999;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.08);
+  color: #000;
 }
 
 .icon {
@@ -220,11 +212,11 @@
   text-align: center;
   margin-top: 4rem;
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
 }
 
 .signature p {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 1rem;
   margin: 0;
   font-style: italic;
@@ -338,7 +330,6 @@
   .profile-image img {
     width: 120px;
     height: 120px;
-    border-width: 4px;
     object-position: center 20%;
   }
   
@@ -388,35 +379,30 @@
 @media (hover: none) and (pointer: coarse) {
   .social-link:hover {
     transform: none;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.04);
+    color: #000;
   }
   
   .social-link:active {
     transform: scale(0.98);
-    background: rgba(255, 153, 153, 0.2);
-    border-color: #ff9999;
-    color: #ff9999;
+    background: rgba(0, 0, 0, 0.08);
+    color: #000;
   }
   
   .life-back-button:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.06);
     transform: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white !important;
+    color: #000 !important;
   }
   
   .life-back-button:active {
     transform: scale(0.98);
-    background: rgba(255, 153, 153, 0.2);
-    border: 1px solid #ff9999;
-    color: #ff9999 !important;
+    background: rgba(0, 0, 0, 0.08);
+    color: #000 !important;
   }
   
   .profile-image img:hover {
     transform: none;
-    border-color: rgba(255, 255, 255, 0.2);
   }
 } 

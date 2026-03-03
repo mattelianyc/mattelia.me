@@ -32,35 +32,33 @@
 .work-page {
   min-height: 100vh;
   width: 100vw;
-  background: #000; /* Pure black background */
+  background: #fff;
   padding: 2rem;
   font-family: 'Inconsolata', monospace;
   margin: 0;
   box-sizing: border-box;
   transform: translateZ(0); /* GPU acceleration */
-  color: #fff; /* White text */
+  color: #000;
 }
 
 .work-back-button {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white !important;
+  background: transparent;
+  border: none;
+  color: #000 !important;
   font-family: 'Inconsolata', monospace;
   padding: 0.75rem 1.5rem;
-  border-radius: 50px;
+  border-radius: 0;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 500;
-  backdrop-filter: blur(10px);
   margin-bottom: 2rem;
   will-change: transform, background-color;
 }
 
 .work-back-button:hover {
-  background: rgba(255, 153, 153, 0.2);
+  background: rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
-  border: 1px solid #ff9999;
-  color: #ff9999 !important;
+  color: #000 !important;
 }
 
 .work-content {
@@ -71,7 +69,7 @@
 .work-header {
   text-align: center;
   margin-bottom: 3rem;
-  color: white;
+  color: #000;
 }
 
 .work-header h1 {
@@ -81,10 +79,7 @@
   margin: 0 0 1rem 0;
   letter-spacing: 0.05em;
   text-transform: lowercase;
-  text-shadow: 
-    0 0 20px rgba(255, 255, 255, 0.4),
-    0 0 40px rgba(255, 255, 255, 0.2),
-    2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-shadow: none;
   will-change: transform;
 }
 
@@ -95,7 +90,7 @@
   opacity: 0.9;
   margin: 0;
   will-change: transform;
-  color: #ff9999;
+  color: #000;
 }
 
 .clients-grid {
@@ -107,13 +102,12 @@
 
 .client-card {
   position: relative;
-  background: white;
+  background: #fff;
   border-radius: 20px;
   padding: 0;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: none;
   will-change: transform, box-shadow;
   color: #000;
   height: 280px;
@@ -128,8 +122,7 @@
 
 .client-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(255, 153, 153, 0.3);
-  border: 1px solid rgba(255, 153, 153, 0.2);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
 }
 
 .client-logo {
@@ -137,11 +130,10 @@
 }
 
 .client-info {
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
   padding: 1.5rem;
   text-align: center;
-  color: white;
+  color: #000;
   border-radius: 0 0 20px 20px;
 }
 
@@ -149,7 +141,7 @@
   font-family: 'Inconsolata', monospace;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #fff;
+  color: #000;
   margin: 0 0 0.5rem 0;
   will-change: transform;
 }
@@ -157,7 +149,7 @@
 .year {
   font-family: 'Inconsolata', monospace;
   font-size: 0.9rem;
-  color: #ff9999;
+  color: #000;
   font-weight: 500;
   will-change: transform;
 }
@@ -169,18 +161,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   padding: 2rem;
-  backdrop-filter: blur(5px);
 }
 
 .modal-content {
-  background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #fff;
+  border: none;
   border-radius: 20px;
   max-width: 600px;
   width: 100%;
@@ -188,7 +179,7 @@
   overflow-y: auto;
   position: relative;
   will-change: transform;
-  color: white;
+  color: #000;
 }
 
 .close-button {
@@ -199,20 +190,20 @@
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.6);
   z-index: 1001;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 0;
   will-change: transform, color;
   transition: color 0.3s ease;
 }
 
 .close-button:hover {
-  color: #ff9999;
+  color: #000;
 }
 
 .modal-header {
@@ -220,7 +211,7 @@
   align-items: center;
   gap: 1.5rem;
   padding: 2rem 2rem 1rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
 }
 
 .modal-logo {
@@ -229,12 +220,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
+  background: #fff;
+  border-radius: 0;
   padding: 0.5rem 0.75rem;
   flex-shrink: 0;
   will-change: transform;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
 }
 
 .modal-logo img {
@@ -248,7 +239,7 @@
   font-family: 'vt323', cursive;
   font-size: 1.8rem;
   font-weight: normal;
-  color: #fff;
+  color: #000;
   margin: 0 0 0.5rem 0;
   will-change: transform;
   text-transform: lowercase;
@@ -258,7 +249,7 @@
 .modal-year {
   font-family: 'Inconsolata', monospace;
   font-size: 1rem;
-  color: #ff9999;
+  color: #000;
   font-weight: 500;
   will-change: transform;
 }
@@ -271,7 +262,7 @@
   font-family: 'Inconsolata', monospace;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.85);
   margin: 0 0 2rem 0;
   will-change: transform;
 }
@@ -280,7 +271,7 @@
   font-family: 'vt323', cursive;
   font-size: 1.2rem;
   font-weight: normal;
-  color: #fff;
+  color: #000;
   margin: 0 0 1rem 0;
   text-transform: lowercase;
   letter-spacing: 0.05em;
@@ -293,15 +284,15 @@
 }
 
 .tech-tag {
-  background: #fff;
+  background: #f2f2f2;
   color: #000;
   font-family: 'Inconsolata', monospace;
   padding: 0.5rem 1rem;
-  border-radius: 25px;
+  border-radius: 0;
   font-size: 0.9rem;
   font-weight: 500;
   will-change: transform;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
 }
 
 .client-links {
@@ -312,7 +303,7 @@
   font-family: 'vt323', cursive;
   font-size: 1.2rem;
   font-weight: normal;
-  color: #fff;
+  color: #000;
   margin: 0 0 1rem 0;
   text-transform: lowercase;
   letter-spacing: 0.05em;
@@ -328,26 +319,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.04);
+  color: #000;
   font-family: 'Inconsolata', monospace;
   padding: 0.6rem 1rem;
-  border-radius: 999px;
+  border-radius: 0;
   text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
   transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .client-link:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 153, 153, 0.6);
-  color: #ff9999;
-  background: rgba(255, 153, 153, 0.12);
+  color: #000;
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .client-link:focus-visible {
-  outline: 2px solid rgba(255, 153, 153, 0.9);
-  outline-offset: 3px;
+  outline: none;
 }
 
 /* Animations */
@@ -494,20 +483,20 @@
 @media (hover: none) and (pointer: coarse) {
   .client-card:hover {
     transform: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
   
   .client-card:active {
     transform: scale(0.98);
   }
   
-  .back-button:hover {
-    background: rgba(255, 255, 255, 0.1);
+  .work-back-button:hover {
+    background: rgba(0, 0, 0, 0.06);
     transform: none;
   }
   
-  .back-button:active {
+  .work-back-button:active {
     transform: scale(0.98);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.08);
   }
 } 

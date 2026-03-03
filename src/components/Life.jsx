@@ -188,13 +188,6 @@ const Life = () => {
           className="links-section"
           variants={itemVariants}
         >
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
-          >
-            Connect
-          </motion.h3>
           <motion.div 
             className="social-links"
             initial="initial"
@@ -229,15 +222,6 @@ const Life = () => {
               </motion.a>
             ))}
           </motion.div>
-        </motion.div>
-
-        <motion.div 
-          className="signature"
-          variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-        >
-          <p>made with ♥️</p>
         </motion.div>
       </motion.div>
     </motion.div>
