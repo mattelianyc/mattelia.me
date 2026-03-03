@@ -50,7 +50,7 @@
       {
         "id": "talent-platform",
         "name": "Talent Platform",
-        "logo": "/images/clients/tlnt.png",
+        "logo": "/images/clients/tlnt.svg",
         "description": "Architected and developed a comprehensive platform for talent management and trading. The ecosystem includes multiple components such as a web application, mobile apps for different user roles, a decentralized exchange (DEX) for talent-related tokens, microservices for scalability, and a robust API for integration. Key features include cryptocurrency market integration, user profiles, shops, and real-time communication.",
         "technologies": ["React Native", "JavaScript", "Node.js", "Microservices", "Blockchain", "Decentralized Exchange"],
         "year": "2023-Present",
