@@ -1,7 +1,7 @@
 {
   "personal": {
-    "name": "matthew a. elia",
-    "nickname": "m.e.",
+    "name": "matthew elia",
+    "nickname": "matthew elia",
     "title": "Software Architect & Engineer",
     "location": "NYC",
     "emoji": "👨🏻‍💻",
@@ -22,6 +22,11 @@
         "name": "Email",
         "url": "mailto:mattelianyc@gmail.com",
         "icon": "email"
+      },
+      {
+        "name": "Calendly",
+        "url": "https://calendly.com/mattelianyc/30min",
+        "icon": "calendly"
       }
     ]
   },

@@ -59,7 +59,7 @@ const Life = () => {
     },
     hover: {
       scale: 1.05,
-      y: -8,
+      y: -2,
       transition: {
         duration: 0.2,
         ease: "easeOut"
@@ -88,6 +88,12 @@ const Life = () => {
         return (
           <svg viewBox="0 0 24 24" className="icon">
             <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        );
+      case 'calendly':
+        return (
+          <svg viewBox="0 0 24 24" className="icon">
+            <path d="M7 2v3M17 2v3M3 9h18M5 5h14a2 2 0 012 2v11a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         );
       default:
@@ -203,22 +209,19 @@ const Life = () => {
           >
             {personal.links.map((link, index) => (
               <motion.a 
-                key={index}
+                key={link.name}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label={link.name}
+                title={link.name}
+                target={link.name !== 'Email' ? '_blank' : undefined}
+                rel={link.name !== 'Email' ? 'noopener noreferrer' : undefined}
                 className="social-link"
                 variants={socialLinkVariants}
                 whileHover="hover"
                 whileTap="tap"
               >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {renderIcon(link.icon)}
-                </motion.div>
-                <span>{link.name}</span>
+                {renderIcon(link.icon)}
+                <span className="social-link-text">{link.name}</span>
               </motion.a>
             ))}
           </motion.div>
