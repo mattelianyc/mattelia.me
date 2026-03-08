@@ -208,6 +208,15 @@
   color: #000;
 }
 
+.social-link:hover .icon {
+  fill: var(--color-nantucket-red);
+  stroke: var(--color-nantucket-red);
+}
+
+.social-link:hover .icon path {
+  stroke: var(--color-nantucket-red);
+}
+
 .icon {
   width: 18px;
   height: 18px;
@@ -409,6 +418,15 @@
     box-shadow: none;
     background: transparent;
     color: #000;
+  }
+
+  .social-link:hover .icon {
+    fill: var(--color-nantucket-red);
+    stroke: var(--color-nantucket-red);
+  }
+
+  .social-link:hover .icon path {
+    stroke: var(--color-nantucket-red);
   }
   
   .social-link:active {
