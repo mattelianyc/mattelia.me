@@ -168,14 +168,6 @@
   background: rgba(0, 0, 0, 0.82);
 }
 
-.life-split.hovered .split-overlay {
-  border-left-width: 1.75px;
-}
-
-.work-split.hovered .split-overlay {
-  border-right-width: 1.75px;
-}
-
 .split-content {
   text-align: center;
   z-index: 3;

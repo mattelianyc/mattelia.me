@@ -89,7 +89,7 @@
   display: flex;
   align-items: flex-start;
   gap: 3rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .profile-image {
@@ -301,7 +301,7 @@
     text-align: center;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
   
   .profile-info {

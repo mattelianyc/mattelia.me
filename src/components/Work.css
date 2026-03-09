@@ -182,12 +182,20 @@
   color: #000;
 }
 
+@media (min-width: 769px) {
+  .modal-content {
+    max-width: 750px;
+  }
+}
+
 .close-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
+  background: transparent;
   border: none;
+  appearance: none;
+  -webkit-appearance: none;
   font-size: 2rem;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.6);
@@ -203,7 +211,16 @@
 }
 
 .close-button:hover {
+  background: transparent;
+  box-shadow: none;
   color: #000;
+}
+
+.close-button:focus,
+.close-button:focus-visible {
+  background: transparent;
+  box-shadow: none;
+  outline: none;
 }
 
 .modal-header {
